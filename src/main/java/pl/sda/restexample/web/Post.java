@@ -1,5 +1,6 @@
 package pl.sda.restexample.web;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,16 +11,19 @@ import javax.persistence.Id;
 
 @Entity
 @Data
-@NoArgsConstructor
-
+//@NoArgsConstructor
+@AllArgsConstructor
 
 public class Post {
 
     @Id
     @GeneratedValue
-    public long id;
+    public Long id;
     public String title;
     public String message;
+
+    public Post() {
+    }
 
     public Post(String title, String message) {
         this.title = title;
